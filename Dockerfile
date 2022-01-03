@@ -29,7 +29,6 @@ RUN \
     libxkbfile-dev \
     pkg-config \
     python3 && \
-    libtool-bin && \
     autotools-dev && \
     automake && \
     bsdmainutils && \
