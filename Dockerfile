@@ -34,9 +34,9 @@ RUN apt-get update && \
     pkg-config \
     python3 && \
     # bsdmainutils && \
-    autoconf && \
-    automake && \
-    libtool && \
+    # autoconf && \
+    # automake && \
+    # libtool && \
     libdb-dev && \
     libminiupnpc-dev && \
     libzmq3-dev && \
