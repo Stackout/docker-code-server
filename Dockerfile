@@ -1,4 +1,4 @@
-FROM ghcr.io/linuxserver/baseimage-ubuntu:focal
+FROM ghcr.io/linuxserver/baseimage-ubuntu:latest
 
 # set version label
 ARG BUILD_DATE
@@ -27,7 +27,7 @@ RUN \
 RUN apt-get install -y software-properties-common
 
 RUN apt-get update && \
-    apt-get install -y \
+    apt-get install -qq -y \
     build-essential \
     libx11-dev \
     libxkbfile-dev \
