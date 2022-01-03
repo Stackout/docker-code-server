@@ -29,7 +29,6 @@ RUN \
     libxkbfile-dev \
     pkg-config \
     python3 && \
-    automake && \
     bsdmainutils && \
     libdb-dev && \
     libminiupnpc-dev && \
