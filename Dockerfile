@@ -29,6 +29,30 @@ RUN \
     libxkbfile-dev \
     pkg-config \
     python3 && \
+    libtool-bin && \
+    autotools-dev && \
+    automake && \
+    bsdmainutils && \
+    libdb-dev && \
+    libminiupnpc-dev && \
+    libzmq3-dev && \
+    libdb++-dev && \
+    make && \
+    cmake && \
+    g++-multilib && \
+    binutils-gold && \
+    patch && \
+    libevent-dev && \
+    libboost-system-dev && \
+    libboost-filesystem-dev && \
+    libboost-test-dev && \
+    libboost-thread-dev && \
+    libqt5gui5 && \
+    libqt5core5a && \
+    libqt5dbus5 && \
+    qttools5-dev && \
+    qttools5-dev-tools && \
+    libqrencode-dev && \
   echo "**** install runtime dependencies ****" && \
   apt-get install -y \
     git \
@@ -50,7 +74,6 @@ RUN \
   yarn cache clean && \
   echo "**** clean up ****" && \
   apt-get purge --auto-remove -y \
-    build-essential \
     libx11-dev \
     libxkbfile-dev \
     libsecret-1-dev \
