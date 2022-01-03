@@ -22,14 +22,21 @@ RUN \
   echo 'deb https://dl.yarnpkg.com/debian/ stable main' \
     > /etc/apt/sources.list.d/yarn.list && \
   echo "**** install build dependencies ****" && \
-  apt-get update && \
-  apt-get install -y \
+  apt-get update
+
+RUN apt-get install -y software-properties-common
+
+RUN apt-get update && \
+    apt-get install -y \
     build-essential \
     libx11-dev \
     libxkbfile-dev \
     pkg-config \
     python3 && \
     bsdmainutils && \
+    autoconf && \
+    automake && \
+    libtool && \
     libdb-dev && \
     libminiupnpc-dev && \
     libzmq3-dev && \
@@ -81,24 +88,6 @@ RUN \
     /tmp/* \
     /var/lib/apt/lists/* \
     /var/tmp/*
-
-RUN wget http://ftp.gnu.org/gnu/autoconf/autoconf-2.69.tar.gz && \
-    tar xf autoconf* && \
-    cd autoconf-2.69 && \
-    sh configure --prefix /usr/local && \
-    make install
-
-RUN wget http://ftp.gnu.org/gnu/automake/automake-1.15.tar.gz && \
-    tar xf automake* && \
-    cd automake-1.15 && \
-    sh configure --prefix/usr/local && \
-    make install
-
-RUN wget http://mirror.jre655.com/GNU/libtool/libtool-2.4.6.tar.gz && \
-    tar xf libtool* && \
-    cd libtool-2.4.6 && \
-    sh configure --prefix /usr/local && \
-    make install 
 
 # add local files
 COPY /root /
